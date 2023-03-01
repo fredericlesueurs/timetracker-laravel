@@ -1,5 +1,5 @@
 <div>
-    <table class="table w-full">
+    <table class="table table-compact md:table-normal w-full">
         <thead class="bg-base-100">
             <tr>
                 <th class="bg-inherit">
@@ -21,7 +21,7 @@
                     </th>
                     <td>
                         <div class="flex items-center space-x-3">
-                            <x-avatar :client="$client" class="text-2xl w-16" />
+                            <x-avatar :client="$client" class="text-md w-10 md:text-2xl md:w-16" />
                             <div>
                                 <div class="font-bold">{{ $client->name }}</div>
                                 @if($client->contact_name !== null)
@@ -31,15 +31,27 @@
                         </div>
                     </td>
                     <th>
-                        <a href="{{ route('clients.show', ['client' => $client]) }}">
+                        <div class="dropdown dropdown-bottom dropdown-end md:hidden">
+                            <label tabindex="0" class="btn btn-ghost btn-xs">Actions</label>
+                            <ul tabindex="0" class="dropdown-content menu p-2 shadow bg-base-100 rounded-box">
+                                <li>
+                                    <a href="{{ route('clients.show', ['client' => $client]) }}">Détails</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('clients.edit', ['client' => $client]) }}">Edition</a>
+                                </li>
+                                <li>
+                                    <button wire:click="delete({{ $client->id }})">Supprimer</button>
+                                </li>
+                            </ul>
+                        </div>
+                        <a class="hidden md:inline" href="{{ route('clients.show', ['client' => $client]) }}">
                             <button class="btn btn-ghost btn-xs">détails</button>
                         </a>
-                        <a href="{{ route('clients.edit', ['client' => $client]) }}">
+                        <a class="hidden md:inline" href="{{ route('clients.edit', ['client' => $client]) }}">
                             <button class="btn btn-ghost btn-xs">édition</button>
                         </a>
-                        <a>
-                            <button class="btn btn-ghost btn-xs">supprimer</button>
-                        </a>
+                        <button wire:click="delete({{ $client->id }})" class="hidden md:inline btn btn-ghost btn-xs">supprimer</button>
                     </th>
                 </tr>
             @endforeach

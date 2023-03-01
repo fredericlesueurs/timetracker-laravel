@@ -13,6 +13,11 @@ class ListTable extends Component
 {
     use WithPagination;
 
+    public function delete(int $id)
+    {
+        Client::where('id', $id)->delete();
+    }
+
     public function render(): Factory|View|Application
     {
         return view('clients.livewire.list-table', [

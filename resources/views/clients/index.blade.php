@@ -3,11 +3,11 @@
 @section('title', 'Liste des clients')
 
 @section('breadcrumb')
-
+    <x-layouts::breadcrumbs class="hidden lg:flex" :breadcrumbs="Breadcrumbs::generate('clients.index')" />
 @endsection
 
 @section('breadcrumb_mobile')
-
+    <x-layouts::breadcrumbs class="lg:hidden" :breadcrumbs="Breadcrumbs::generate('clients.index')" />
 @endsection
 
 @section('content')
@@ -21,7 +21,7 @@
             </a>
         </div>
     </div>
-    <div class="overflow-x-auto w-full">
+    <div class="w-full">
         <livewire:clients.list-table/>
     </div>
 @endsection

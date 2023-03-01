@@ -1,6 +1,6 @@
 @props(['breadcrumbs'])
 
-<div {{ $attributes->merge(['class' => 'text-sm breadcrumbs flex-1 ml-3']) }}>
+<div {{ $attributes->merge(['class' => 'text-sm breadcrumbs flex-1']) }}>
     @unless ($breadcrumbs->isEmpty())
         <ul>
             @foreach ($breadcrumbs as $breadcrumb)

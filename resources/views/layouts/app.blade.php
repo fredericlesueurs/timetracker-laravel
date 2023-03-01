@@ -10,7 +10,7 @@
         <div class="drawer drawer-mobile">
             <input id="drawer" type="checkbox" class="drawer-toggle"/>
             <div class="drawer-content flex flex-col bg-gray-100">
-                <div class="navbar bg-base-100 h-16 border-b-2">
+                <div class="navbar bg-base-100 h-16 border-b-2 px-5">
                     <div class="flex-none lg:hidden">
                         <label for="drawer" class="btn btn-square btn-ghost">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
