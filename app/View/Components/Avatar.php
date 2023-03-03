@@ -2,7 +2,6 @@
 
 namespace App\View\Components;
 
-use App\Models\Client;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -15,8 +14,8 @@ class Avatar extends Component
     public function __construct(
         public ?string $clientName = null,
         public ?string $logo = null,
-    )
-    {}
+    ) {
+    }
 
     /**
      * Get the view / contents that represent the component.

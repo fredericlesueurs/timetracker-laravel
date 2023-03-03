@@ -34,7 +34,6 @@ class Client extends Model
             && $this->city === null
             && $this->zip_code === null
             && $this->address === null
-            && $this->contact_name === null
-        ;
+            && $this->contact_name === null;
     }
 }
