@@ -18,4 +18,4 @@ Route::name('dashboard')->get('/', function () {
     return view('dashboard');
 });
 
-Route::resource('clients', ClientController::class)->except(['destroy']);
+Route::resource('clients', ClientController::class);

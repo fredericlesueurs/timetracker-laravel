@@ -13,5 +13,6 @@ class ViewServiceProvider extends \Illuminate\View\ViewServiceProvider
     public function boot(): void
     {
         Blade::anonymousComponentPath(resource_path('views/layouts/components'), 'layouts');
+        Blade::anonymousComponentPath(resource_path('views/shared/components'), 'shared');
     }
 }

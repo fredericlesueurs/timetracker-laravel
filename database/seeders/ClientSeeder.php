@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Client;
+use App\Models\Project;
 use Illuminate\Database\Seeder;
 
 class ClientSeeder extends Seeder
@@ -14,6 +15,7 @@ class ClientSeeder extends Seeder
     {
         Client::factory()
             ->count(20)
+            ->has(Project::factory()->count(2))
             ->create();
     }
 }

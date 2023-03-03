@@ -16,7 +16,7 @@
             <h2 class="text-2xl font-bold align-middle">Clients</h2>
         </div>
         <div class="flex-wrap btn-group">
-            <a to="#">
+            <a href="{{ route('clients.create') }}">
                 <button class="btn btn-sm btn-primary">Créer</button>
             </a>
         </div>

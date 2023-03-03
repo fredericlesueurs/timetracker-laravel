@@ -21,7 +21,7 @@
                     </th>
                     <td>
                         <div class="flex items-center space-x-3">
-                            <x-avatar :client="$client" class="text-md w-10 md:text-2xl md:w-16" />
+                            <x-avatar class="text-md w-10 md:text-2xl md:w-16" :client-name="$client->name" :logo="$client->logo" />
                             <div>
                                 <div class="font-bold">{{ $client->name }}</div>
                                 @if($client->contact_name !== null)

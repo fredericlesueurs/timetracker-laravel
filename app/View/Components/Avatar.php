@@ -13,7 +13,8 @@ class Avatar extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public Client $client,
+        public ?string $clientName = null,
+        public ?string $logo = null,
     )
     {}
 
@@ -23,8 +24,9 @@ class Avatar extends Component
     public function render(): View|Closure|string
     {
         return view('clients.components.avatar', [
-            'client' => $this->client,
-            'clientInitials' => $this->getInitials($this->client->name),
+            'clientName' => $this->clientName,
+            'logo' => $this->logo,
+            'clientInitials' => $this->clientName !== null ? $this->getInitials($this->clientName) : null,
         ]);
     }
 

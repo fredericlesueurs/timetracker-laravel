@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ClientUpdateRequest;
+use App\Http\Requests\ClientRequest;
 use App\Models\Client;
 use Illuminate\Http\Request;
 
@@ -21,15 +21,22 @@ class ClientController extends Controller
      */
     public function create()
     {
-        //
+        return view('clients.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ClientRequest $request)
     {
-        //
+        $validatedFields = $request->validated();
+
+        $client = new Client();
+
+        $client->fill($validatedFields);
+        $client->save();
+
+        return to_route('clients.show', ['client' => $client]);
     }
 
     /**
@@ -51,8 +58,23 @@ class ClientController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ClientUpdateRequest $request, Client $client)
+    public function update(ClientRequest $request, Client $client)
     {
-        //
+        $validatedFields = $request->validated();
+
+        $client->fill($validatedFields);
+        $client->save();
+
+        return to_route('clients.show', ['client' => $client]);
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     */
+    public function destroy(Client $client)
+    {
+        $client->delete();
+
+        return to_route('clients.index');
     }
 }

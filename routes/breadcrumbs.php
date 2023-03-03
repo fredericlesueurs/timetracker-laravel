@@ -13,6 +13,11 @@ Breadcrumbs::for('clients.index', function (BreadcrumbTrail $trail) {
     $trail->push('Clients', route('clients.index'));
 });
 
+Breadcrumbs::for('clients.create', function (BreadcrumbTrail $trail) {
+    $trail->parent('clients.index');
+    $trail->push('Création', route('clients.create'));
+});
+
 Breadcrumbs::for('clients.show', function (BreadcrumbTrail $trail, Client $client) {
     $trail->parent('clients.index');
     $trail->push($client->name, route('clients.show', ['client' => $client]));

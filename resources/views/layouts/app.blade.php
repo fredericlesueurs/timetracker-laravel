@@ -1,4 +1,4 @@
-<html lang="fr" data-theme="bumblebee">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="bumblebee">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
                         </label>
                     </div>
                     <div class="flex-1 lg:hidden">
-                        <a class="btn btn-ghost normal-case text-xl">️🐰⏱️ Time Tracker</a>
+                        <a class="btn btn-ghost normal-case text-xl">️🐇⏱️ Time Tracker</a>
                     </div>
                     @yield('breadcrumb')
                     <div class="flex-none gap-2">
